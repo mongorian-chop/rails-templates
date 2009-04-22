@@ -9,6 +9,7 @@ run("find . \\( -type d -empty \\) -and \\( -not -regex ./\\.git.* \\) -exec tou
 plugin "rspec", :git => "git://github.com/dchelimsky/rspec.git"
 plugin "rspec-rails", :git => "git://github.com/dchelimsky/rspec-rails.git"
 generate :rspec
+plugin "i18n_generators", :git => "git://github.com/amatsuda/i18n_generators.git"
 
 # git:rails:new_app
 git :init
