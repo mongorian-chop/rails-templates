@@ -3,13 +3,18 @@
   run("rmdir ./#{f}")
 end
  
-# git:hold_empty_dirs
-run("find . \\( -type d -empty \\) -and \\( -not -regex ./\\.git.* \\) -exec touch {}/.gitignore \\;")
- 
+# plugin install
 plugin "rspec", :git => "git://github.com/dchelimsky/rspec.git"
 plugin "rspec-rails", :git => "git://github.com/dchelimsky/rspec-rails.git"
 generate :rspec
 plugin "i18n_generators", :git => "git://github.com/amatsuda/i18n_generators.git"
+
+# rake stats
+run "mkdir spec/views"
+run "mkdir spec/controllers"
+
+# git:hold_empty_dirs
+run("find . \\( -type d -empty \\) -and \\( -not -regex ./\\.git.* \\) -exec touch {}/.gitignore \\;")
 
 # git:rails:new_app
 git :init
